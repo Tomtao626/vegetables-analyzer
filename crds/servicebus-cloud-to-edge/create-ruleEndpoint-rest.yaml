@@ -1,0 +1,9 @@
+apiVersion: rules.kubeedge.io/v1
+kind: RuleEndpoint
+metadata:
+  name: vege-rest
+  labels:
+    description: vege
+spec:
+  ruleEndpointType: "rest"
+  properties: {}

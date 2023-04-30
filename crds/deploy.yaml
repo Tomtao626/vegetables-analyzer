@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    kubeedge-app: vegetables-analyzer
+  name: vegetables-analyzer
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      kubeedge-app: vegetables-analyzer
+  template:
+    metadata:
+      labels:
+        kubeedge-app: vegetables-analyzer
+    spec:
+      nodeName: xx
+      hostNetwork: true
+      restartPolicy: Always
+      imagePullSecrets:
+      - name: docker-secret
+      containers:
+      - name: vegetables-analyzer
+        image: edge.imooc.com/imooc_containers/vegetables_analyzer:v1
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+        - mountPath: /usr/local/lib/python3.7/site-packages
+          name: site-pkg
+      volumes:
+      - name: site-pkg
+        hostPath:
+          path: /root/volume_sitepkg/site-packages

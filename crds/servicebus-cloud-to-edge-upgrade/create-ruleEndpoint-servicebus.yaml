@@ -1,0 +1,9 @@
+apiVersion: rules.kubeedge.io/v1
+kind: RuleEndpoint
+metadata:
+  name: vege-servicebus-upgrade
+  labels:
+    description: vege
+spec:
+  ruleEndpointType: "servicebus"
+  properties: {"service_port":"5000"}

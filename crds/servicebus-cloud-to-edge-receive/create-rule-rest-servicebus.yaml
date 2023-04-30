@@ -1,0 +1,11 @@
+apiVersion: rules.kubeedge.io/v1
+kind: Rule
+metadata:
+  name: vege-rule-rest-servicebus-receive
+  labels:
+    description: test
+spec:
+  source: "vege-rest-receive"
+  sourceResource: {"path":"/receive_model"}
+  target: "vege-servicebus-receive"
+  targetResource: {"path":"/receive_model"}

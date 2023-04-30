@@ -1,0 +1,11 @@
+apiVersion: rules.kubeedge.io/v1
+kind: Rule
+metadata:
+  name: vege-upload-rule-eventbus-rest
+  labels:
+    description: vege-upload-rule-eventbus-rest
+spec:
+  source: "vege-upload-eventbus"
+  sourceResource: {"topic": "upload","node_name": "imooc-edge02"}
+  target: "vege-upload-rest"
+  targetResource: {"resource":"http://127.0.0.1:8080/upload"}

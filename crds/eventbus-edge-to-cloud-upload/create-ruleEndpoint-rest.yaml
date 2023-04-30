@@ -1,0 +1,9 @@
+apiVersion: rules.kubeedge.io/v1
+kind: RuleEndpoint
+metadata:
+  name: vege-upload-rest
+  labels:
+    description: vege-upload-rest
+spec:
+  ruleEndpointType: "rest"
+  properties: {}

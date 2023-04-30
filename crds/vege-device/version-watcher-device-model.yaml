@@ -1,0 +1,24 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: DeviceModel
+metadata:
+  name: version-watcher-device-model
+  namespace: default
+  labels:
+    description: version-watcher-device-model
+spec:
+  properties:
+  - name: version
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: ''
+  - name: file_md5
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: ''
+  - name: class_names
+    type:
+      string:
+        accessMode: ReadWrite
+        defaultValue: ''

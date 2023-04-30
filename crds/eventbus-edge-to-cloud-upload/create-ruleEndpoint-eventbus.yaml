@@ -1,0 +1,9 @@
+apiVersion: rules.kubeedge.io/v1
+kind: RuleEndpoint
+metadata:
+  name: vege-upload-eventbus
+  labels:
+    description: vege-upload-eventbus
+spec:
+  ruleEndpointType: "eventbus"
+  properties: {}

@@ -1,0 +1,47 @@
+apiVersion: devices.kubeedge.io/v1alpha2
+kind: Device
+metadata:
+  name: version-watcher-device-instance
+  namespace: default
+  labels:
+    description: version-watcher-device-instance
+spec:
+  deviceModelRef:
+    name: version-watcher-device-model
+  nodeSelector:
+    nodeSelectorTerms:
+      - matchExpressions:
+          - key: ''
+            operator: In
+            values:
+              - imooc-edge02
+status:
+  twins:
+  - propertyName: version
+    desired:
+      metadata:
+        type: string
+      value: ''
+    reported:
+      metadata:
+        type: string
+      value: ''
+  - propertyName: file_md5
+    desired:
+      metadata:
+        type: string
+      value: ''
+    reported:
+      metadata:
+        type: string
+      value: ''
+  - propertyName: class_names
+    desired:
+      metadata:
+        type: string
+      value: ''
+    reported:
+      metadata:
+        type: string
+      value: ''
+

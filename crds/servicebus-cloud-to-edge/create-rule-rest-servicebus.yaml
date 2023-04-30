@@ -1,0 +1,11 @@
+apiVersion: rules.kubeedge.io/v1
+kind: Rule
+metadata:
+  name: vege-rule-rest-servicebus
+  labels:
+    description: test
+spec:
+  source: "vege-rest"
+  sourceResource: {"path":"/source"}
+  target: "vege-servicebus"
+  targetResource: {"path":"/receive_model_and_upgrade"}
